@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #20002c;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
+
+
+}
+
+.container{
+    width: 400px;
+    height: 500px;
+    background: #8e9eab;  
+    background: -webkit-linear-gradient(to left, #eef2f3, #8e9eab);  
+    background: linear-gradient(to left, #eef2f3, #8e9eab); 
+    margin: auto;
+    transform: translateY(50%);
+    border-radius: 10%;
+    box-shadow: 0 20px 20px -5px black;
+    
+}
+
+.title{
+    text-align: center;
+}
+
+.image__music{
+    width: 200px;
+    height: 200px;
+    margin-top: 25px;
+    background-color: rgba(255, 255, 255, 0.432);
+    transform: translateX(50%);
+}
+
+.title__music{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.time__bar{
+    text-align: center;
+    margin-top:20px;
+}
+
+#time{
+    width: 200px;
+}
+
+.volume__bar{
+    text-align: center;
+    
+}
+
+.controls{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+    letter-spacing: 15px;
+}
+
+
+
