@@ -13,15 +13,13 @@
 
     <div class="container">
 
-        <audio id="audio">
-            <source src="" type="audio/mpeg"> 
-        </audio> 
+        <audio id="audio" src=""></audio> 
 
         <div class="title">
             <h1>Music Player</h1>
         </div>
         <div class="image__music">
-            <img id="image" src="" alt="">
+            <img id="image" src="">
         </div>
         <div class="title__music">
             <h2 class="name__music">music name</h2>
@@ -29,21 +27,23 @@
         </div>
 
         <div class="time__bar">
-            <span id="during">00:00 </span>
-            <input id="time"  type="range" min="0" value="0" />
-            <span id="during"> 00:00</span>
+            <span id="current">00:00 </span>
+            <input id="time"  type="range" value="0" min="0" max="100" />
+            <span id="duration"> 00:00</span>
         </div>
 
         <div class="volume__bar">
             <ion-icon name="volume-low-outline"></ion-icon>
-            <input id="volume"  type="range" min="0" value="0" />
+            <input id="volume"  type="range" value="50" min="0" max="100">
             <ion-icon name="volume-high-outline"></ion-icon>
         </div>
     
         <div class="controls">
             <ion-icon id="shuffle" name="shuffle-outline"></ion-icon>
             <ion-icon id="skip__back" name="play-skip-back-outline"></ion-icon>
+        <div class="play__pause">
             <ion-icon id="play" name="play-outline"></ion-icon>
+        </div>
             <ion-icon id="skip__forward" name="play-skip-forward-outline"></ion-icon>
             <ion-icon id="repeat" name="repeat-outline"></ion-icon>
         </div>
