@@ -9,7 +9,9 @@ let btnSkipBack = container.querySelector("#skip__back");
 let btnSkipFor = container.querySelector("#skip__forward");
 let btnShuffle = container.querySelector("#shuffle");
 let btnRepeat = container.querySelector("#repeat");
-let timeBar = container.querySelector(".time__bar");
+let timeBar = container.querySelector("#time");
+let currentMsc = container.querySelector("#current");
+let durationMsc = container.querySelector("#duration");
 let volumeControl = container.querySelector("#volume");
  
 //index from the musics array
@@ -34,6 +36,34 @@ btnShuffle.addEventListener("click", ()=>{
 btnRepeat.addEventListener("click", ()=>{
        repeatMusic();
 } );
+timeBar.addEventListener("change", ()=>{
+        progressBar();
+ } );
+
+ //duration
+ setTimeout(()=>{
+         timeBar.max = audioMsc.duration;
+         console.log(audioMsc.duration);
+         durationMsc.innerHTML = timeFormat(audioMsc.duration);
+ },300);
+
+ const timeFormat = (time)=>{
+         let min = Math.floor(time / 60);
+         if(min < 10){
+                 min = `0${min}`;
+         }
+         let sec = Math.floor(time % 60);
+         if(sec < 10){
+                 sec = `0${sec}`;
+         }
+         return `${min}:${sec}`;
+ }
+
+ //timeBar
+        setInterval(() => {
+              timeBar.value = audioMsc.currentTime;
+              currentMsc.innerHTML = timeFormat(audioMsc.currentTime);
+        }, 500);
 
 //functions
         function loadMusic(indexNumb){
@@ -87,17 +117,17 @@ btnRepeat.addEventListener("click", ()=>{
                 playMusic();
          }
 
-        //  function volume(){
-        //          volumeControl.innerHTML = volumeControl.value;
-        //          audio.volumeControl = volumeControl.value / 100;
-        //  }
+         function progressBar(){
+                let progress = audioMsc.duration * (timeBar.value / 100);
 
-         audioMsc.addEventListener("timeupdate", (e)=>{
-                 const currentTime = e.target.currentTime;
-                 const duration = e.target.duration;
-                 let progressWidth = (currentTime / duration) * 100;
-                 timeBar.getElementsByClassName.width = `${progressWidth}%`
-         });
+                 audioMsc.currentTime = progress;
+         }
+
+
+
+        //  function setVolume() {
+        //         audioMsc.volume = volumeControl.value / 100;
+        //       }
 
 //musics array
 let allMusic = [
