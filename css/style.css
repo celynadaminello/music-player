@@ -7,10 +7,10 @@
 }
 
 body{
-    background: #20002c; 
-    background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);  
-    background: linear-gradient(to right, #cbb4d4, #20002c); 
- 
+    background: #20002c;
+    background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);
+    background: linear-gradient(to right, #cbb4d4, #20002c);
+
 
 
 }
@@ -18,14 +18,14 @@ body{
 .container{
     width: 400px;
     height: 500px;
-    background: #8e9eab;  
-    background: -webkit-linear-gradient(to left, #eef2f3, #8e9eab);  
-    background: linear-gradient(to left, #eef2f3, #8e9eab); 
+    background: #8e9eab;
+    background: -webkit-linear-gradient(to left, #eef2f3, #8e9eab);
+    background: linear-gradient(to left, #eef2f3, #8e9eab);
     margin: auto;
     transform: translateY(50%);
     border-radius: 10%;
     box-shadow: 0 20px 20px -5px black;
-    
+
 }
 
 .title{
@@ -74,12 +74,12 @@ input[type='range'] {
     -webkit-appearance: none;
     background-color: #ffffff;
   }
-  
+
   input[type='range']::-webkit-slider-thumb {
     width: 10px;
     -webkit-appearance:none;
     height: 20px;
-    
+
     cursor: pointer;
     background: #20002c;
     box-shadow: -110px 0 0 110px #cbb4d4;

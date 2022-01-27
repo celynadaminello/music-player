@@ -17,6 +17,10 @@ let volumeControl = container.querySelector("#volume");
 //index from the musics array
 let musicIndex = 0
 
+let randomSg = false;
+
+audioMsc.volume = 0.1;
+
 //events
 window.addEventListener("load", ()=>{
     loadMusic(musicIndex);
@@ -39,13 +43,16 @@ btnRepeat.addEventListener("click", ()=>{
 timeBar.addEventListener("change", ()=>{
         progressBar();
  } );
+ volumeControl.addEventListener("change", ()=>{
+        setVolume();
+ } );
 
  //duration
- setTimeout(()=>{
+ setInterval(()=>{
          timeBar.max = audioMsc.duration;
          console.log(audioMsc.duration);
          durationMsc.innerHTML = timeFormat(audioMsc.duration);
- },300);
+ },1000);
 
  const timeFormat = (time)=>{
          let min = Math.floor(time / 60);
@@ -59,7 +66,7 @@ timeBar.addEventListener("change", ()=>{
          return `${min}:${sec}`;
  }
 
- //timeBar
+ //timeBar and currentTime
         setInterval(() => {
               timeBar.value = audioMsc.currentTime;
               currentMsc.innerHTML = timeFormat(audioMsc.currentTime);
@@ -117,17 +124,42 @@ timeBar.addEventListener("change", ()=>{
                 playMusic();
          }
 
+        //  function shuffle(){
+        //         if (randomSg == false) {
+        //                 randomSg = true;
+        //                 btnShuffle.title = "Disable shuffle";
+        //                 // btnShuffle.classList.replace("fad", "fas");
+        //               } else {
+        //                 randomSg = false;
+        //                 btnShuffle.title = "Enable shuffle";
+        //                 // btnShuffle.classList.replace("fas", "fad");
+        //               }
+        //  }
+
+        // function repeatMusic(){
+        //         if (audioMsc.loop == false) {
+        //                 audioMsc.setAttribute("loop", true);
+        //                btnRepeat.title = "Disable repeat";
+        //                btnRepeat.classList.replace("shuffle-outline", "repeat-outline");
+        //         //        btnRepeat.classList.replace("fa-repeat", "fa-repeat-1");
+        //               } else {
+        //                 audioMsc.removeAttribute("loop");
+        //                btnRepeat.title = "Enable repeat";
+        //                btnRepeat.classList.replace("repeat-outline", "shuffle-outline");
+        //         //        btnRepeat.classList.replace("fa-repeat-1", "fa-repeat");
+        //               }  
+        // }
+
          function progressBar(){
                 let progress = audioMsc.duration * (timeBar.value / 100);
 
                  audioMsc.currentTime = progress;
          }
 
-
-
-        //  function setVolume() {
-        //         audioMsc.volume = volumeControl.value / 100;
-        //       }
+         function setVolume() {
+                
+                audioMsc.volume = volumeControl.value / 100;
+              }
 
 //musics array
 let allMusic = [
