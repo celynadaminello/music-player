@@ -151,7 +151,7 @@ timeBar.addEventListener("change", ()=>{
         // }
 
          function progressBar(){
-                let progress = audioMsc.duration * (timeBar.value / 100);
+                let progress = timeBar.value;
 
                  audioMsc.currentTime = progress;
          }
