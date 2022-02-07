@@ -47,6 +47,10 @@ timeBar.addEventListener("change", ()=>{
         setVolume();
  } );
 
+ audioMsc.addEventListener("ended", ()=>{
+         skipForward();
+ } );
+
  //duration
  setInterval(()=>{
          timeBar.max = audioMsc.duration;
@@ -80,6 +84,7 @@ timeBar.addEventListener("change", ()=>{
         imgMsc.src = `assets/images/${allMusic[indexNumb].img}.jpg`;
         audioMsc.src = `assets/audio/${allMusic[indexNumb].audio}.mp3`;
         }
+
 
         function playPause(){
                 if(audioMsc.paused){
@@ -124,31 +129,28 @@ timeBar.addEventListener("change", ()=>{
                 playMusic();
          }
 
-        //  function shuffle(){
-        //         if (randomSg == false) {
-        //                 randomSg = true;
-        //                 btnShuffle.title = "Disable shuffle";
-        //                 // btnShuffle.classList.replace("fad", "fas");
-        //               } else {
-        //                 randomSg = false;
-        //                 btnShuffle.title = "Enable shuffle";
-        //                 // btnShuffle.classList.replace("fas", "fad");
-        //               }
-        //  }
+         function shuffle(){
+                if (randomSg == false) {
+                        randomSg = true;
+                        btnShuffle.style.color = "#b91cf1";
+                        
+                      } else {
+                        randomSg = false;
+                        btnShuffle.style.color = "black";
+                        
+                      }
+         }
 
-        // function repeatMusic(){
-        //         if (audioMsc.loop == false) {
-        //                 audioMsc.setAttribute("loop", true);
-        //                btnRepeat.title = "Disable repeat";
-        //                btnRepeat.classList.replace("shuffle-outline", "repeat-outline");
-        //         //        btnRepeat.classList.replace("fa-repeat", "fa-repeat-1");
-        //               } else {
-        //                 audioMsc.removeAttribute("loop");
-        //                btnRepeat.title = "Enable repeat";
-        //                btnRepeat.classList.replace("repeat-outline", "shuffle-outline");
-        //         //        btnRepeat.classList.replace("fa-repeat-1", "fa-repeat");
-        //               }  
-        // }
+        function repeatMusic(){
+                if (audioMsc.loop == false) {
+                        audioMsc.setAttribute("loop", true);
+                        btnRepeat.style.color = "#b91cf1";
+                      } else {
+                        audioMsc.removeAttribute("loop");
+                        btnRepeat.style.color = "black";
+                        // skipForward();
+                      }  
+        }
 
          function progressBar(){
                 let progress = timeBar.value;
@@ -171,10 +173,10 @@ let allMusic = [
             
     },
     {
-            name: "Guy",
-            author: "Superfruit",
-            img: "guy-exe",
-            audio:"superfruit-guy-exe"
+            name: "Two Moons",
+            author: "BoyWithUke",
+            img: "twomoons",
+            audio:"two-moons"
     },
     {
             name: "Enemy",
@@ -182,17 +184,17 @@ let allMusic = [
             img: "enemy",
             audio:"imagine-dragons-enemy"
     },
-//     {
-//             name: "I Wanna Be Your Slave",
-//             author: "Maneskin",
-//             img: "slave",
-//             audio:"maneskin-I-WANNA-BE-YOUR-SLAVE"
-//     },
-//     {
-//             name: "Counting Stars",
-//             author: "One Republic",
-//             img: "counting-stars",
-//             audio:"one-republic-counting-stars"
-//     }
+    {
+            name: "West Coast",
+            author: "Imagine Dragons",
+            img: "origins-imagine-dragons",
+            audio:"imagine-dragons-west-coast"
+    },
+    {
+            name: "Guy",
+            author: "Superfruit",
+            img: "guy-exe",
+            audio:"superfruit-guy-exe"
+    },
     
     ];
