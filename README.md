@@ -14,4 +14,4 @@ Project is created with:
 
 ## ⏱️ Status
 
-This project is already finished. 
+This project is almost finished, just need to add the shuffle function.
